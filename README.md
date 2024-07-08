@@ -13,22 +13,28 @@ f. Relationship between each AU Codes and Emotion Type. We are checking the coun
 
 ### Approach
 <ul><b>1. Custom Data Loader:</b> Generates batches of data and preprocesses it for model training and evaluation.</ul>
+
 <ul><b>2. Train-Test Split:</b>
 <li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
 <li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
 </ul>
-<ul>**3.Data Generators Initialization:**
-    <li>Defined batch size as 32 and set image dimensions to (224, 224, 3).</li>
-    <li>Applied data standardization, normalization, and augmentation (augmentation only for training data).</li>
-    <li>Set number of classes to 3 for emotion classification.</li>
+
+<ul><b>3.Data Generators Initialization:</b>
+<li>Defined batch size as 32 and set image dimensions to (224, 224, 3).</li>
+<li>Applied data standardization, normalization, and augmentation (augmentation only for training data).</li>
+<li>Set number of classes to 3 for emotion classification.</li>
 </ul>
-4. Model Definition:
-    <li>DenseNet Model: Chosen for its efficient layer connectivity and reduced overfitting.</li>
-    <li>Multi-output model: Handles emotion output, AU output, and image input.</li>
-5. Model Compilation:
-    <li>Optimizer: AdamW (includes weight decay to prevent overfitting).</li>
-    <li>Loss Functions: Categorical cross-entropy for emotion output and binary cross-entropy for AU output.</li>
-    <li>Evaluation Metrics: Accuracy for both emotion and AU outputs.</li>
+
+<ul><b>4. Model Definition:</b>
+<li>DenseNet Model: Chosen for its efficient layer connectivity and reduced overfitting.</li>
+<li>Multi-output model: Handles emotion output, AU output, and image input.</li>
+</ul>
+
+<ul><b>5. Model Compilation:</b>
+<li>Optimizer: AdamW (includes weight decay to prevent overfitting).</li>
+<li>Loss Functions: Categorical cross-entropy for emotion output and binary cross-entropy for AU output.</li>
+<li>Evaluation Metrics: Accuracy for both emotion and AU outputs.</li>
+</ul>
 
 6.Model Training:
     <li>Fitting model parameters: Trained model using training_generator, with validation data and callbacks for early stopping and learning rate scheduling.</li>
