@@ -4,18 +4,18 @@ This project demonstrated the use of DenseNet for predicting emotions and FACS c
 Our goal in this assignment was to anticipate emotions and the Facial Action Coding System (FACS) code that corresponds to each input image. Our dataset consists of labels with associated FACS code and their emotion. These labels are useful for developing and testing models. Throughout this study, we explore data exploration and pre-processing techniques to gain a deeper understanding of the dataset's characteristics, including the distribution of emotions and FACS codes. We also detail how to choose an appropriate model architecture, fine-tune its hyperparameters, and evaluate its performance using suitable metrics.
 ### Evaluation Framework
 
-**a. Checked type of columns present in the dataset** - Basic feature understanding.<br/>
-**b. Checked unique emotion type in the Dataset and its counts of existence.** Analysed that dataset is biased towards negative emotion.<br/>
-**c. Visualised images -** Determined the images type i.e.  RGB or grayscale, which was helpful during model architecture.<br/>
-**d. Checked the number of occurrences of 1’s in each AU codes in the Dataset.**  AU codes are imbalanced - few codes above 100 and few below it. Hence need to be handled during model training.<br/>
-**e. Checked the distribution of contrast in the images.** Most of the images are in the frequency of 80 - 100 contrast range.<br/>
-**f. Relationship between each AU Codes and Emotion Type.** We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.<br/>
+a. Checked type of columns present in the dataset- Basic feature understanding.<br/>
+b. Checked unique emotion type in the Dataset and its counts of existence. Analysed that dataset is biased towards negative emotion.<br/>
+c. Visualised images - Determined the images type i.e.  RGB or grayscale, which was helpful during model architecture.<br/>
+d. Checked the number of occurrences of 1’s in each AU codes in the Dataset.  AU codes are imbalanced - few codes above 100 and few below it. Hence need to be handled during model training.<br/>
+e. Checked the distribution of contrast in the images. Most of the images are in the frequency of 80 - 100 contrast range.<br/>
+f. Relationship between each AU Codes and Emotion Type. We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.<br/>
 
 ### Approach
 <ul>1. Custom Data Loader:
-       <li>Generates batches of data and preprocesses it for model training and evaluation.</li>
+<li>Generates batches of data and preprocesses it for model training and evaluation.</li>
 </ul>
-3. Train-Test Split: 
+2. Train-Test Split: 
     <li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
     <li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
 
