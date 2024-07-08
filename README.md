@@ -10,6 +10,7 @@ To evaluate the dataset, we followed the following data exploration to gain insi
 **d. Checked the number of occurrences of 1’s in each AU codes in the Dataset.** By looking at the count we can determine if the dataset is biased towards any kind and can handle it while doing the model architecture Observing the results, we found that the AU codes are very imbalanced as there are few codes which are above 100 and few below it. Hence need to be handled during model training.
 **e. Checked the distribution of contrast in the images.** From the output we realised that most of the images are in the frequency of 80 - 100 contrast range.
 **f. Relationship between each AU Codes and Emotion Type.** We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.
+
 ### Approach
 1. Custom Data Loader:
        Generates batches of data and preprocesses it for model training and evaluation.
