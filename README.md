@@ -4,18 +4,17 @@ This project demonstrated the use of DenseNet for predicting emotions and FACS c
 Our goal in this assignment was to anticipate emotions and the Facial Action Coding System (FACS) code that corresponds to each input image. Our dataset consists of labels with associated FACS code and their emotion. These labels are useful for developing and testing models. Throughout this study, we explore data exploration and pre-processing techniques to gain a deeper understanding of the dataset's characteristics, including the distribution of emotions and FACS codes. We also detail how to choose an appropriate model architecture, fine-tune its hyperparameters, and evaluate its performance using suitable metrics.
 ### Evaluation Framework
 To evaluate the dataset, we followed the following data exploration to gain insights:
-a. Checked type of columns present in the dataset - To understand the dataset features.
-b. Checked unique emotion type in the Dataset and its counts of existence. By looking at the count and existence of emotion categories we can determine if the dataset is biased towards any kind and can handle it while doing the model architecture. From the output we realised that the model is biased towards negative emotion.
-c. Visualised images.
-We used visualisation to determine whether the images were in RGB or grayscale, which was helpful in creating our model because some models only take RGB images. We learned from the visualisation that the datset contains few grayscale images. Therefore, this must be addressed during model architecture.
-d. Checked the number of occurrences of 1’s in each AU codes in the Dataset. By looking at the count we can determine if the dataset is biased towards any kind and can handle it while doing the model architecture Observing the results, we found that the AU codes are very imbalanced as there are few codes which are above 100 and few below it. Hence need to be handled during model training.
-e. Checked the distribution of contrast in the images. From the output we realised that most of the images are in the frequency of 80 - 100 contrast range.
-f. Relationship between each AU Codes and Emotion Type. We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.
+**a. Checked type of columns present in the dataset** - To understand the dataset features.
+**b. Checked unique emotion type in the Dataset and its counts of existence.** By looking at the count and existence of emotion categories we can determine if the dataset is biased towards any kind and can handle it while doing the model architecture. From the output we realised that the model is biased towards negative emotion.
+**c. Visualised images -** We used visualisation to determine whether the images were in RGB or grayscale, which was helpful in creating our model because some models only take RGB images. We learned from the visualisation that the datset contains few grayscale images. Therefore, this must be addressed during model architecture.
+**d. Checked the number of occurrences of 1’s in each AU codes in the Dataset.** By looking at the count we can determine if the dataset is biased towards any kind and can handle it while doing the model architecture Observing the results, we found that the AU codes are very imbalanced as there are few codes which are above 100 and few below it. Hence need to be handled during model training.
+**e. Checked the distribution of contrast in the images.** From the output we realised that most of the images are in the frequency of 80 - 100 contrast range.
+**f. Relationship between each AU Codes and Emotion Type.** We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.
 ### Approach
-1. Custom Data Loader: 
-    Generates batches of data and preprocesses it for model training and evaluation.
+1. Custom Data Loader:
+       Generates batches of data and preprocesses it for model training and evaluation.
 
-2. Train-Test Split: 
+3. Train-Test Split: 
     Dataset split into 70% training, 15% validation, and 15% testing sets.
     Ensures sufficient data for training, fine-tuning, and evaluating the model.
 
