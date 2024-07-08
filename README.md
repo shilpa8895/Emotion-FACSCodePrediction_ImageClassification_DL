@@ -2,7 +2,7 @@
 This project demonstrated the use of DenseNet for predicting emotions and FACS codes from images. By performing data exploration, pre-processing, model training, and evaluation, we developed a robust model capable of predictions. 
 ### Introduction 
 Goal is to anticipate emotions and the Facial Action Coding System (FACS) code that corresponds to each input image. Dataset consists of labels with associated FACS code and their emotion. 
-### Evaluation Framework
+### EDA
 
 1. Checked type of columns present in the dataset- Basic feature understanding.<br/>
 2. Checked unique emotion type in the Dataset and its counts of existence. Analysed that dataset is biased towards negative emotion.<br/>
