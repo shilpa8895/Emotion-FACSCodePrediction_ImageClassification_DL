@@ -12,16 +12,16 @@ e. Checked the distribution of contrast in the images. Most of the images are in
 f. Relationship between each AU Codes and Emotion Type. We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.<br/>
 
 ### Approach
-<ul>1. Custom Data Loader: Generates batches of data and preprocesses it for model training and evaluation.</ul>
-<ul>Train-Test Split: 
+<ul>**1. Custom Data Loader:** Generates batches of data and preprocesses it for model training and evaluation.</ul>
+<ul>**2. Train-Test Split:** 
         <li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
         <li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
 </ul>
-3.Data Generators Initialization:
+<ul>**3.Data Generators Initialization:**
     <li>Defined batch size as 32 and set image dimensions to (224, 224, 3).</li>
     <li>Applied data standardization, normalization, and augmentation (augmentation only for training data).</li>
     <li>Set number of classes to 3 for emotion classification.</li>
-
+</ul>
 4. Model Definition:
     <li>DenseNet Model: Chosen for its efficient layer connectivity and reduced overfitting.</li>
     <li>Multi-output model: Handles emotion output, AU output, and image input.</li>
