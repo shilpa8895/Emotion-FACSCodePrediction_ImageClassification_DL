@@ -13,9 +13,9 @@ f. Relationship between each AU Codes and Emotion Type. We are checking the coun
 
 ### Approach
 <ul><b>1. Custom Data Loader:</b> Generates batches of data and preprocesses it for model training and evaluation.</ul>
-<ul>**2. Train-Test Split:** 
-        <li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
-        <li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
+<ul><b>2. Train-Test Split:</b>
+<\t><li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
+<\t><li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
 </ul>
 <ul>**3.Data Generators Initialization:**
     <li>Defined batch size as 32 and set image dimensions to (224, 224, 3).</li>
