@@ -3,7 +3,7 @@ This project demonstrated the use of DenseNet for predicting emotions and FACS c
 ### Introduction 
 Our goal in this assignment was to anticipate emotions and the Facial Action Coding System (FACS) code that corresponds to each input image. Our dataset consists of labels with associated FACS code and their emotion. These labels are useful for developing and testing models. Throughout this study, we explore data exploration and pre-processing techniques to gain a deeper understanding of the dataset's characteristics, including the distribution of emotions and FACS codes. We also detail how to choose an appropriate model architecture, fine-tune its hyperparameters, and evaluate its performance using suitable metrics.
 ### Evaluation Framework
-To evaluate the dataset, we followed the following data exploration to gain insights:
+
 **a. Checked type of columns present in the dataset** - To understand the dataset features.<br/>
 **b. Checked unique emotion type in the Dataset and its counts of existence.** By looking at the count and existence of emotion categories we can determine if the dataset is biased towards any kind and can handle it while doing the model architecture. From the output we realised that the model is biased towards negative emotion.<br/>
 **c. Visualised images -** We used visualisation to determine whether the images were in RGB or grayscale, which was helpful in creating our model because some models only take RGB images. We learned from the visualisation that the datset contains few grayscale images. Therefore, this must be addressed during model architecture.<br/>
@@ -13,32 +13,32 @@ To evaluate the dataset, we followed the following data exploration to gain insi
 
 ### Approach
 1. Custom Data Loader:
-       Generates batches of data and preprocesses it for model training and evaluation.
+       <li>Generates batches of data and preprocesses it for model training and evaluation.</li>
 
 3. Train-Test Split: 
-    Dataset split into 70% training, 15% validation, and 15% testing sets.
-    Ensures sufficient data for training, fine-tuning, and evaluating the model.
+    <li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
+    <li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
 
 3.Data Generators Initialization:
-    Defined batch size as 32 and set image dimensions to (224, 224, 3).
-    Applied data standardization, normalization, and augmentation (augmentation only for training data).
-    Set number of classes to 3 for emotion classification.
+    <li>Defined batch size as 32 and set image dimensions to (224, 224, 3).</li>
+    <li>Applied data standardization, normalization, and augmentation (augmentation only for training data).</li>
+    <li>Set number of classes to 3 for emotion classification.</li>
 
 4. Model Definition:
-    DenseNet Model: Chosen for its efficient layer connectivity and reduced overfitting.
-    Multi-output model: Handles emotion output, AU output, and image input.
+    <li>DenseNet Model: Chosen for its efficient layer connectivity and reduced overfitting.</li>
+    <li>Multi-output model: Handles emotion output, AU output, and image input.</li>
 5. Model Compilation:
-    Optimizer: AdamW (includes weight decay to prevent overfitting).
-    Loss Functions: Categorical cross-entropy for emotion output and binary cross-entropy for AU output.
-    Evaluation Metrics: Accuracy for both emotion and AU outputs.
+    <li>Optimizer: AdamW (includes weight decay to prevent overfitting).</li>
+    <li>Loss Functions: Categorical cross-entropy for emotion output and binary cross-entropy for AU output.</li>
+    <li>Evaluation Metrics: Accuracy for both emotion and AU outputs.</li>
 
 6.Model Training:
-    Fitting model parameters: Trained model using training_generator, with validation data and callbacks for early stopping and learning rate scheduling.
+    <li>Fitting model parameters: Trained model using training_generator, with validation data and callbacks for early stopping and learning rate scheduling.</li>
 
 7.Experiments & Tuning:
     Addressed overfitting by:
-      Hyperparameter tuning, regularization, and data augmentation.
-      Fine-tuning layers and adjusting the number of neurons (added 256 neurons with ReLU activation).
-      Added L1 and L2 regularization, used GlobalAveragePooling2D, and applied Dropout (0.2).
-      Set learning rate to 0.001 and used learning rate scheduler.
+      <li>Hyperparameter tuning, regularization, and data augmentation.</li>
+      <li>Fine-tuning layers and adjusting the number of neurons (added 256 neurons with ReLU activation).</li>
+      <li>Added L1 and L2 regularization, used GlobalAveragePooling2D, and applied Dropout (0.2).</li>
+      <li>Set learning rate to 0.001 and used learning rate scheduler.</li>
 Performed oversampling to address dataset imbalance.
