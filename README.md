@@ -12,7 +12,7 @@ e. Checked the distribution of contrast in the images. Most of the images are in
 f. Relationship between each AU Codes and Emotion Type. We are checking the counts of each FACS code for each type of emotion since the output is based on FACS and emotion type to determine whether the dataset is imbalanced.<br/>
 
 ### Approach
-1. Custom Data Loader: Generates batches of data and preprocesses it for model training and evaluation.
+<ul>1. Custom Data Loader: Generates batches of data and preprocesses it for model training and evaluation.</ul>
 <ul>Train-Test Split: 
         <li>Dataset split into 70% training, 15% validation, and 15% testing sets.</li>
         <li>Ensures sufficient data for training, fine-tuning, and evaluating the model.</li>
