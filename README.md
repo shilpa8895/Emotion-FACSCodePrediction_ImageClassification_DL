@@ -30,19 +30,15 @@ f. Relationship between each AU Codes and Emotion Type. We are checking the coun
 <li>Multi-output model: Handles emotion output, AU output, and image input.</li>
 </ul>
 
-<ul><b>5. Model Compilation:</b>
-<li>Optimizer: AdamW (includes weight decay to prevent overfitting).</li>
+
+<ul><b>5.Experiments & Tuning:</b>
+<li>Hyperparameter tuning, regularization, and data augmentation.</li>
+<li>Fine-tuning layers and adjusting the number of neurons (added 256 neurons with ReLU activation).</li>
+<li>Added L1 and L2 regularization, used GlobalAveragePooling2D, and applied Dropout (0.2).</li>
+<li>Set learning rate to 0.001 and used learning rate scheduler.</li>
+<li>Performed oversampling to address dataset imbalance.</li>
+<li>AdamW Optimizer weight decay to prevent overfitting.</li>
 <li>Loss Functions: Categorical cross-entropy for emotion output and binary cross-entropy for AU output.</li>
+
 <li>Evaluation Metrics: Accuracy for both emotion and AU outputs.</li>
 </ul>
-
-6.Model Training:
-    <li>Fitting model parameters: Trained model using training_generator, with validation data and callbacks for early stopping and learning rate scheduling.</li>
-
-7.Experiments & Tuning:
-    Addressed overfitting by:
-      <li>Hyperparameter tuning, regularization, and data augmentation.</li>
-      <li>Fine-tuning layers and adjusting the number of neurons (added 256 neurons with ReLU activation).</li>
-      <li>Added L1 and L2 regularization, used GlobalAveragePooling2D, and applied Dropout (0.2).</li>
-      <li>Set learning rate to 0.001 and used learning rate scheduler.</li>
-Performed oversampling to address dataset imbalance.
